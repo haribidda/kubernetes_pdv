@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: pdv
 spec:
-  type: NodePory
+  type: NodePort
   ports:
     - port: 5000
   selector:
