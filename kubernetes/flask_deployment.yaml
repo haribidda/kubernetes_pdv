@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdv
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pdv
+  template:
+    metadata:
+      labels:
+        app: pdv
+
+    spec:
+      containers:
+        - name: pdv
+          image: pdv
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+              protocol: TCP
