@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: pdv
-          image: jp.icr.io/ns-v2/pdv
+          image: icr.io/ns-v1/pdv
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
