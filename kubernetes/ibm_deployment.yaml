@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdv
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dvp
+  template:
+    metadata:
+      labels:
+        app: dvp
+
+    spec:
+      containers:
+        - name: dvp
+          image: jp.icr.io/ns-rv/dvp
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+              
