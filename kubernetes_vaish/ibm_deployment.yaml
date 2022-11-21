@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petapp
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petapp
+  template:
+    metadata:
+      labels:
+        app: petapp
+
+    spec:
+      containers:
+        - name: petapp
+          image: jp.icr.io/ns-p1/petapp
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP
